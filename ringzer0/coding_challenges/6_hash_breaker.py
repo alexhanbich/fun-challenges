@@ -5,8 +5,8 @@ import hashlib
 
 def get_hash_from_url(url):
     text = requests.get(url).text
-    text = re.split('----- BEGIN HASH -----<br />\s+', text)[1]
-    return re.split('<br />\s+----- END HASH -----<br />', text)[0]
+    text = re.split('BEGIN HASH -----<br />\s+', text)[1]
+    return re.split('<br />', text)[0]
 
 def get_flag_from_url(url):
     text = requests.get(url).text

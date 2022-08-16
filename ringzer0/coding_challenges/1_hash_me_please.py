@@ -4,8 +4,8 @@ import hashlib
 
 def get_message_from_url(url):
     text = requests.get(url).text
-    text = re.split('----- BEGIN MESSAGE -----<br />\s+', text)[1]
-    return re.split('<br />\s+----- END MESSAGE -----<br />', text)[0]
+    text = re.split('BEGIN MESSAGE -----<br />\s+', text)[1]
+    return re.split('<br />', text)[0]
 
 def get_flag_from_url(url):
     text = requests.get(url).text
